@@ -12,14 +12,19 @@
     "sass": "sass src/styles/app.scss src/styles.css"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.6",
     "cssnano": "^5.0.5",
     "light-server": "^2.9.1",
-    "postcss": "^8.3.0",
     "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.2",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-mixins": "^9.0.1",
+    "postcss-preset-env": "^7.0.1",
     "sass": "^1.44.0",
-    "tailwindcss": "^2.1.4",
     "tailwindcss-cli": "^0.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.19"
   }
 }
