@@ -8,15 +8,16 @@
     "minify": "postcss src/styles/app.css -o src/styles.css",
     "tailwind:prod": "NODE_ENV=production npm run tailwind",
     "tailwind:prod:minify": "npm run tailwind:prod && npm run minify",
-    "css:dev": "TAILWIND_MODE=watch NODE_ENV=development postcss src/styles/app.css -o src/styles.css -w"
+    "css:dev": "TAILWIND_MODE=watch NODE_ENV=development postcss src/styles/app.css -o src/styles.css -w",
+    "sass": "sass src/styles/app.sass src/styles.css"
   },
   "dependencies": {
     "autoprefixer": "^10.2.6",
     "cssnano": "^5.0.5",
     "light-server": "^2.9.1",
-    "node-sass": "^7.0.0",
     "postcss": "^8.3.0",
     "postcss-cli": "^8.3.1",
+    "sass": "^1.44.0",
     "tailwindcss": "^2.1.4",
     "tailwindcss-cli": "^0.1.2"
   }
