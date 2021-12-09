@@ -1,17 +1,123 @@
-/* Error: expected "{".
- *   ,
- * 1 | <!DOCTYPE html>
- *   |  ^
- *   '
- *   src/styles/app.scss 1:2  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a   \2577 \a 1 \2502  <!DOCTYPE html>\a   \2502   ^\a   \2575 \a   src/styles/app.scss 1:2  root stylesheet';
+/* ----- Mixins ----- */
+.is-hashed {
+  background-image: repeating-linear-gradient(-45deg, hsla(var(--pageText-hsl), 0.5) 0, hsla(var(--pageText-hsl), 0.5) 1px, transparent 0, transparent 50%);
+  background-size: 8px 8px;
+  background-repeat: repeat;
 }
+
+/* ----- Buttons -----*/
+.btn {
+  /* default style button */
+  @apply inline-block relative bg-pageBG px-5 py-2 text-center rounded-none border font-sans font-semibold text-xs;
+  /* default: hover */
+  /* default: inverted */
+  /* default: disabled */
+  /* primary style button */
+  /* white style button */
+  /* text-based button */
+  /* large sized button */
+}
+.btn:not(.is-primary):not(.is-white):not(.is-disabled):not(.is-soldout).is-active, .btn:not(.is-primary):not(.is-white):not(.is-disabled):not(.is-soldout):hover {
+  @apply bg-pageText border-pageText text-pageBG;
+}
+.btn.is-inverted {
+  @apply bg-pageText border-pageBG text-pageBG;
+}
+.btn.is-inverted:not(.is-primary):not(.is-white):not(.is-disabled):not(.is-soldout).is-active, .btn.is-inverted:not(.is-primary):not(.is-white):not(.is-disabled):not(.is-soldout):hover {
+  @apply bg-pageBG border-pageBG text-pageText;
+}
+.btn.is-disabled:not(.is-primary), .btn.is-soldout {
+  @apply bg-pageBG opacity-20;
+}
+.btn.is-primary {
+  @apply bg-pageText border-pageText text-pageBG;
+  /* primary: inverted */
+}
+.btn.is-primary.is-inverted {
+  @apply bg-pageBG border-pageBG text-pageText;
+}
+.btn.is-white {
+  @apply bg-white border-white text-black;
+}
+.btn.is-text {
+  @apply px-0 bg-transparent border-transparent;
+}
+.btn.is-text.is-disabled, .btn.is-text:not(.is-disabled):hover {
+  @apply opacity-60;
+}
+.btn.is-large {
+  @apply text-2xl font-normal px-7;
+}
+.btn.load-more {
+  @apply text-lg;
+}
+
+/* ----- Counters ----- */
+.counter {
+  @apply border rounded-none p-2 bg-pageBG text-pageText;
+}
+.counter.is-small {
+  @apply p-1;
+}
+.counter.is-inverted {
+  @apply bg-transparent text-pageBG;
+}
+.product--actions .counter {
+  @apply mr-4;
+}
+.counter--up, .counter--down {
+  @apply -my-px w-8 h-8 p-2 rounded-none transition-colors duration-300;
+}
+.cart .counter--up, .cart .counter--down {
+  @apply my-0;
+}
+.counter--up:hover, .counter--down:hover {
+  background: hsla(var(--pageText-hsl), 0.2);
+}
+.is-inverted .counter--up:hover, .is-inverted .counter--down:hover {
+  background: hsla(var(--pageBG-hsl), 0.2);
+}
+.counter--amount {
+  @apply text-xs font-mono;
+}
+.cart .counter--amount {
+  @apply w-8;
+}
+.counter--amount input {
+  @apply p-1;
+}
+
+/* ----- Marquees ----- */
+.marquee {
+  @apply border-b;
+}
+.marquee--item {
+  @apply flex;
+}
+.marquee--text {
+  @apply block p-6 text-3xl leading-none;
+}
+.marquee--photo {
+  @apply relative w-32 sm:w-48 px-8 py-4 sm:px-12 sm:py-8;
+  /* [data-theme='metal'] & {
+    filter: invert(94%) sepia(59%) saturate(2450%) hue-rotate(35deg) brightness(122%) contrast(111%);
+  } */
+}
+html:not([data-theme=dark]) .marquee--photo img {
+  filter: invert(1);
+}
+.marquee--product {
+  @apply flex flex-col -my-px;
+  margin: -1px 0;
+  width: calc(80vw - 2rem);
+  /* max-width: 28rem; */
+  max-width: 18rem;
+}
+.marquee--product * {
+  @apply whitespace-normal;
+}
+.marquee--product .product-card {
+  @apply flex-1;
+}
+
+/*# sourceMappingURL=styles.css.map */

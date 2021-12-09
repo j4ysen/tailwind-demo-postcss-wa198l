@@ -9,7 +9,7 @@
     "tailwind:prod": "NODE_ENV=production npm run tailwind",
     "tailwind:prod:minify": "npm run tailwind:prod && npm run minify",
     "css:dev": "TAILWIND_MODE=watch NODE_ENV=development postcss src/styles/app.css -o src/styles.css -w",
-    "sass": "sass src/styles/app.sass src/styles.css"
+    "sass": "sass src/styles/app.scss src/styles.css"
   },
   "dependencies": {
     "autoprefixer": "^10.2.6",
