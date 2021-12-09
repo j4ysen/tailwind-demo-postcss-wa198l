@@ -1,0 +1,22 @@
+{
+  "name": "node-starter",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "light-server -c light-server.config.json",
+    "tailwind": "tailwindcss-cli build src/main.css -o src/styles.css",
+    "minify": "postcss src/styles.css -o src/styles.css",
+    "tailwind:prod": "NODE_ENV=production npm run tailwind",
+    "tailwind:prod:minify": "npm run tailwind:prod && npm run minify",
+    "css:dev": "TAILWIND_MODE=watch NODE_ENV=development postcss src/main.css -o src/styles.css -w"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "cssnano": "^5.0.5",
+    "light-server": "^2.9.1",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.4",
+    "tailwindcss-cli": "^0.1.2"
+  }
+}
