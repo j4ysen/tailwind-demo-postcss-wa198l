@@ -3,11 +3,10 @@ module.exports = {
     preflight: false,
   },
   purge: {
+    enabled: true,
     content: [
-      './components/**/*.js',
-      './lib/**/*.js',
-      './modules/**/*.js',
-      './pages/**/*.js',
+      './src/**/*.js',
+      './src/**/*.html',
     ],
     options: {
       safelist: [

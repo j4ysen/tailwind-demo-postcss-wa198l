@@ -1,3 +1,4 @@
+
 module.exports = {
   plugins: {
     'postcss-import': {},
@@ -15,5 +16,15 @@ module.exports = {
     'postcss-mixins': {},
     'postcss-nested': {},
     'postcss-custom-media': {},
+    '@fullhuman/postcss-purgecss': {
+      'content': [
+          // './src/**/*.{js,jsx,ts,tsx, html}',
+          // './src/*.{js,jsx,ts,tsx, html}',
+          './src/**/*.html'
+      ],
+      'defaultExtractor': content => content.match(/[\w-/:]+(?<!:)/g) || [],
+      'safelist': ['html', 'body']
+    },
+
   },
 }
