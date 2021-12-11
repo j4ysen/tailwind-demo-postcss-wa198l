@@ -293,3 +293,8 @@ details[open] > summary:before {
 .form--fields {
   max-width: 35rem;
 }
+
+
+body{
+  font-family: Nimbus Sans L, system-ui, Segoe UI, Helvetica Neue, Arial, Noto Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <body>
 
 <div style="opacity: 1">
@@ -58,7 +58,6 @@
               </button>
               <div
                 class="menu-mobile"
-                style="transform: translateX(-100%) translateZ(0)"
               >
                 <div
                   class="menu-mobile--inner"
@@ -3705,6 +3704,19 @@ style="transform: translateX(100%) translateZ(0)"
 </div>
 <div class="cart--backdrop"></div>
 </div>
+
+<script>
+
+  $("[aria-controls='meganav-0a6ce78ae4ab']").click(function(){
+    console.log("hello");
+    $("#meganav-0a6ce78ae4ab").toggle('is-active')
+    $('.mega-nav--bg').attr("style","--h:0, --hpx:0");
+
+    $(".mega-nav--backdrop").toggle('is-active')
+    
+  });
+  
+</script>
 </body>
 
 </html>

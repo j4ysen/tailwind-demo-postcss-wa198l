@@ -105,7 +105,7 @@
   }
 
   &--link {
-    @apply block no-underline text-current;
+    @apply block no-underline text-current text-left;
 
     &::after {
       @apply block absolute inset-0 z-20;
